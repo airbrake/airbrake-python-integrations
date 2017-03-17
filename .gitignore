@@ -1,0 +1,7 @@
+.coverage
+nosetests.xml
+.tox
+*.pyc
+airbrake_python_integrations.egg-info
+coverage
+venv
