@@ -1,4 +1,4 @@
--e git+git@github.com:airbrake/airbrake-python.git@51b93032b9ba6283a27285aed0335e650b7fdb17#egg=airbrake-master
+airbrake-python==2.0.0
 Django==1.10.6
 funcsigs==1.0.2
 pbr==2.0.0
