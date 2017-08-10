@@ -11,6 +11,7 @@ from airbrake import Airbrake
 class AirbrakeNotifierMiddleware(MiddlewareMixin):
   """Send an error to airbrake for all exceptions"""
   def __init__(self, *args, **kwargs):
+    super(AirbrakeNotifierMiddleware, self).__init__(*args, **kwargs)
     self.enabled = False
     if hasattr(settings, 'AIRBRAKE') \
         and not settings.AIRBRAKE.get('DISABLE', False):
@@ -23,7 +24,6 @@ class AirbrakeNotifierMiddleware(MiddlewareMixin):
       self.ab = Airbrake(project_id, api_key, host, timeout,
                          environment=environment)
 
-    super(AirbrakeNotifierMiddleware, self).__init__(*args, **kwargs)
 
   def process_exception(self, request, exception):
     if self.enabled:
