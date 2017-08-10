@@ -38,29 +38,6 @@ The list of integrations that are available in this gem includes:
 * Flask<sup>[[link](#flask)]</sup>
 * Twisted<sup>[[link](#twisted)]</sup>
 
-
-
-* Web frameworks
-  * Rails<sup>[[link](#rails)]</sup>
-  * Sinatra<sup>[[link](#sinatra)]</sup>
-  * Rack applications<sup>[[link](#rack)]</sup>
-* Job processing libraries
-  * ActiveJob<sup>[[link](#activejob)]</sup>
-  * Resque<sup>[[link](#resque)]</sup>
-  * Sidekiq<sup>[[link](#sidekiq)]</sup>
-  * DelayedJob<sup>[[link](#delayedjob)]</sup>
-  * Shoryuken<sup>[[link](#shoryuken)]</sup>
-* Other libraries
-  * Rake<sup>[[link](#rake)]</sup>
-  * Logger<sup>[[link](#logger)]</sup>
-* Plain Ruby scripts<sup>[[link](#plain-ruby-scripts)]</sup>
-
-[Paying Airbrake plans][pricing] support the ability to track deployments of
-your application in Airbrake. We offer several ways to track your deployments:
-
-* Using Capistrano<sup>[[link](#capistrano)]</sup>
-* Using the Rake task<sup>[[link](#rake-task)]</sup>
-
 Installation
 ------------
 
