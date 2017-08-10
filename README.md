@@ -1,0 +1,122 @@
+Airbrake
+========
+
+![Airbrake integration libraries for Python][arthur-python]
+
+* [Airbrake Python Integrations README](https://github.com/airbrake/airbrake-python-integrations)
+* [Airbrake Python README](https://github.com/airbrake/airbrake-python)
+
+Introduction
+------------
+
+[Airbrake][airbrake.io] is an online tool that provides robust exception
+tracking in any of your Python applications. In doing so, it allows you to easily
+review errors, tie an error to an individual piece of code, and trace the cause
+back to recent changes. The Airbrake dashboard provides easy categorization,
+searching, and prioritization of exceptions so that when errors occur, your team
+can quickly determine the root cause.
+
+Key features
+------------
+
+![The Airbrake Dashboard][dashboard]
+
+This library is built on top of [Airbrake Python][airbrake-python]. The difference
+between _Airbrake Python_ and _Airbrake Python Integrations_ is that the
+`airbrake-python-integrations` package is just a collection of integrations
+with frameworks or other libraries. The `airbrake` package is the core library
+that performs exception sending and other heavy lifting.
+
+Normally, you just need to depend on this package, select the integration you are
+interested in and follow the instructions for it. If the framework or
+application you use does not have an integration available, you can depend on
+the `airbrake` package and ignore this package entirely.
+
+The list of integrations that are available in this gem includes:
+
+* Django<sup>[[link](#django)]</sup>
+* Flask<sup>[[link](#flask)]</sup>
+* Twisted<sup>[[link](#twisted)]</sup>
+
+
+
+* Web frameworks
+  * Rails<sup>[[link](#rails)]</sup>
+  * Sinatra<sup>[[link](#sinatra)]</sup>
+  * Rack applications<sup>[[link](#rack)]</sup>
+* Job processing libraries
+  * ActiveJob<sup>[[link](#activejob)]</sup>
+  * Resque<sup>[[link](#resque)]</sup>
+  * Sidekiq<sup>[[link](#sidekiq)]</sup>
+  * DelayedJob<sup>[[link](#delayedjob)]</sup>
+  * Shoryuken<sup>[[link](#shoryuken)]</sup>
+* Other libraries
+  * Rake<sup>[[link](#rake)]</sup>
+  * Logger<sup>[[link](#logger)]</sup>
+* Plain Ruby scripts<sup>[[link](#plain-ruby-scripts)]</sup>
+
+[Paying Airbrake plans][pricing] support the ability to track deployments of
+your application in Airbrake. We offer several ways to track your deployments:
+
+* Using Capistrano<sup>[[link](#capistrano)]</sup>
+* Using the Rake task<sup>[[link](#rake-task)]</sup>
+
+Installation
+------------
+
+To install airbrake-python-integrations, run:
+```bash
+pip install airbrake-python-integrations
+```
+
+It's highly suggested that you add the package to your `requirements.txt` file:
+
+```bash
+pip freeze > requirements.txt
+```
+
+Configuration
+-------------
+
+### Django
+
+To install the middleware and catch exceptions in your views:
+
+- Add the following to your `settings.py` file; replacing the value with your
+project's id and key:
+
+```python
+AIRBAKE = {
+    "PROJECT_ID": 123,
+    "API_KEY": "123abcde",
+    "ENVIRONMENT": "test"
+}
+```
+
+- Add the middleware to your `settings.py` file; making sure that the
+airbrake middleware is at the top of the list. Django processes middleware
+in order from the end of this list to start, so placing it at the end will
+catch all exceptions before it.
+
+```python
+MIDDLEWARE = [
+    'airbrake_python_integrations.django.middleware.AirbrakeNotifierMiddleware',
+    ...
+]
+```
+
+Note that any middleware that catches exceptions and does not allow them to
+flow through will not be sent to airbrake. It's important to make sure any
+middleware that also process exceptions will raise the original exception:
+
+```python
+def process_exception(self, request, exception):
+    raise exception
+```
+
+### Flask
+
+### Twisted
+
+[airbrake-python]: https://github.com/airbrake/airbrake-python
+[arthur-python]: http://f.cl.ly/items/3Z1A202C1U2j3E1O1N0n/python%2009.19.32.jpg
