@@ -8,4 +8,5 @@ ab = AirbrakeApp(app)
 
 @app.route('/')
 def hello_world():
+    raise Exception("There is a nasty gremlin in this system")
     return 'Hello, World!'
