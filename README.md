@@ -91,7 +91,29 @@ def process_exception(self, request, exception):
     raise exception
 ```
 
+An example django app can be found in /examples/django
+
 ### Flask
+
+To catch exceptions, use the Airbrake extension:
+
+Make sure the airbrake configuration fields are set:
+```
+AIRBRAKE_PROJECT_ID = 123456
+AIRBRAKE_API_KEY = '1290180gsdf8snfaslfa0'
+AIRBRAKE_ENVIRONMENT = "production"
+```
+
+And then install the extension!
+```python
+from airbrake_python_integrations.flask.app import AirbrakeApp
+
+app = Flask(__name__)
+app.config.from_pyfile('config.cfg')
+ab = AirbrakeApp(app)
+```
+
+An example flask app can be found in /examples/flask
 
 ### Twisted
 
