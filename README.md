@@ -1,10 +1,12 @@
-Airbrake
+Airbrake python notifier integrations
 ========
 
 ![Airbrake integration libraries for Python][arthur-python]
 
 * [Airbrake Python Integrations README](https://github.com/airbrake/airbrake-python-integrations)
 * [Airbrake Python README](https://github.com/airbrake/airbrake-python)
+
+Integrations built on top of the airbrake python notifier for quick use with popular frameworks and libraries.
 
 Introduction
 ------------
