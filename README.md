@@ -117,5 +117,21 @@ An example flask app can be found in /examples/flask
 
 ### Twisted
 
+```python
+from airbrake_python_integrations.twisted.observer import AirbrakeLogObserver
+
+settings = {
+    "AIRBRAKE": {
+        "PROJECT_ID": 1234,
+        "API_KEY": "1234567890asdfghjkl"
+    }
+}
+
+ab = AirbrakeLogObserver(settings)
+```
+
+This creates an observer that looks the `globalLogPublisher` twisted object, and checks all events for any possible exceptions.
+
+
 [airbrake-python]: https://github.com/airbrake/airbrake-python
 [arthur-python]: http://f.cl.ly/items/3Z1A202C1U2j3E1O1N0n/python%2009.19.32.jpg
