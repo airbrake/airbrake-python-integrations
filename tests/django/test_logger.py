@@ -31,4 +31,4 @@ class AirbrakeMiddlewareTestCase(TestCase):
         exception = notify.call_args[0][0]
         self.assertTrue(isinstance(exception, Notice))
         self.assertEqual(exception.errors[0]["message"], err_text)
-        self.assertEqual(exception.errors[0]["severity"], "error")
+        self.assertEqual(exception.context["severity"], "error")

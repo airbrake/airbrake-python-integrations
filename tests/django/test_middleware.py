@@ -5,7 +5,7 @@ from django.http import HttpRequest, HttpResponse
 from django.test import TestCase, override_settings
 from django.core.exceptions import PermissionDenied
 
-from ab.django.middleware import AirbrakeNotifierMiddleware
+from airbrake_python_integrations.django.middleware import AirbrakeNotifierMiddleware
 from airbrake.notifier import Airbrake
 
 
