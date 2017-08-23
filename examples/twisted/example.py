@@ -1,10 +1,18 @@
+import unittest
+
 from twisted.internet import protocol, reactor, endpoints
+from twisted.logger import globalLogBeginner, Logger
 from airbrake_python_integrations.twisted.observer import AirbrakeLogObserver
 
 
 class Echo(protocol.Protocol):
+    log = Logger()
+
     def dataReceived(self, data):
-        raise Exception("A gremlin in the system received data: %s" % data)
+        try:
+            raise Exception("A gremlin in the system received data")
+        except:
+            self.log.failure("Error")
         self.transport.write(data)
 
 
@@ -20,9 +28,12 @@ settings = {
     }
 }
 
-ab = AirbrakeLogObserver(settings)
-
 server_address = "tcp:1234"
 endpoints.serverFromString(reactor, server_address).listen(EchoFactory())
 print("Running example airbrake echo server on %s" % server_address)
+
+observers = [AirbrakeLogObserver(settings)]
+
+globalLogBeginner.beginLoggingTo(observers, redirectStandardIO=False)
+
 reactor.run()

@@ -121,6 +121,7 @@ An example flask app can be found in /examples/flask
 
 ```python
 from airbrake_python_integrations.twisted.observer import AirbrakeLogObserver
+from twisted.logger import globalLogBeginner, Logger
 
 settings = {
     "AIRBRAKE": {
@@ -129,11 +130,20 @@ settings = {
     }
 }
 
-ab = AirbrakeLogObserver(settings)
+observers = [AirbrakeLogObserver(settings)]
+
+globalLogBeginner.beginLoggingTo(observers, redirectStandardIO=False)
+
+log = Logger()
+try:
+    raise Exception("A gremlin in the system is angry")
+except:
+    log.failure("Error")
 ```
 
 This creates an observer that looks the `globalLogPublisher` twisted object, and checks all events for any possible exceptions.
 
+An example flask app can be found in /examples/twisted
 
 [airbrake-python]: https://github.com/airbrake/airbrake-python
 [arthur-python]: http://f.cl.ly/items/3Z1A202C1U2j3E1O1N0n/python%2009.19.32.jpg
