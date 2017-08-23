@@ -1,7 +1,6 @@
 import mock
 import os
 import unittest
-import tempfile
 
 from flask import Flask, got_request_exception
 from requests.exceptions import RequestException
@@ -51,6 +50,3 @@ class AirbrakeTestCase(unittest.TestCase):
         exception = notify.call_args[0][0]
         self.assertTrue(str(exception) == self.exception_msg)
         self.assertTrue(isinstance(exception, RequestException))
-
-if __name__ == '__main__':
-    unittest.main()
