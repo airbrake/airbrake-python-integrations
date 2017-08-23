@@ -1,8 +1,12 @@
+import sys
+
 from airbrake import Airbrake
 from airbrake.notifier import build_error
-from twisted.logger import globalLogPublisher, Logger
+from twisted.logger import Logger, ILogObserver
+from zope.interface import implementer
 
 
+@implementer(ILogObserver)
 class AirbrakeLogObserver(object):
     def __init__(self, settings):
         if not settings.get('AIRBRAKE', False) or \
@@ -16,20 +20,15 @@ class AirbrakeLogObserver(object):
         timeout = settings['AIRBRAKE'].get('TIMEOUT', None)
         environment = settings['AIRBRAKE'].get('ENVIRONMENT', None)
         self.ab = Airbrake(project_id, api_key, host, timeout,
-                           environment=environment)
+                           environment=environment, send_uncaught_exc=False)
 
-        log = Logger()
-        globalLogPublisher.addObserver(self.event_observer)
-
-    def event_observer(self, event):
-        if not event.get('isError', False) or not 'failure' in event or not self.ab:
+    def __call__(self, event):
+        if not event["log_failure"] or not self.ab:
             return
-        import pdb
-        pdb.set_trace()
 
         error = build_error(
-            event["failure"],
-            message=event["failure"].getErrorMessage()
+            event["log_failure"].value,
+            message=event["log_failure"].getErrorMessage()
         )
         notice = self.ab.build_notice(error)
 
