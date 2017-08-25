@@ -11,7 +11,7 @@ Integrations built on top of the airbrake python notifier for quick use with pop
 Introduction
 ------------
 
-[Airbrake][airbrake.io] is an online tool that provides robust exception
+[Airbrake](https://airbrake.io/) is an online tool that provides robust exception
 tracking in any of your Python applications. In doing so, it allows you to easily
 review errors, tie an error to an individual piece of code, and trace the cause
 back to recent changes. The Airbrake dashboard provides easy categorization,
@@ -20,8 +20,6 @@ can quickly determine the root cause.
 
 Key features
 ------------
-
-![The Airbrake Dashboard][dashboard]
 
 This library is built on top of [Airbrake Python][airbrake-python]. The difference
 between _Airbrake Python_ and _Airbrake Python Integrations_ is that the
@@ -34,7 +32,7 @@ interested in and follow the instructions for it. If the framework or
 application you use does not have an integration available, you can depend on
 the `airbrake` package and ignore this package entirely.
 
-The list of integrations that are available in this gem includes:
+The list of integrations that are available in this package includes:
 
 * Django<sup>[[link](#django)]</sup>
 * Flask<sup>[[link](#flask)]</sup>
