@@ -1,4 +1,4 @@
-"""Airbrake-Python package attributes and metadata."""
+"""Airbrake-Integrations package attributes and metadata."""
 
 __all__ = (
     '__title__',
@@ -21,7 +21,7 @@ __keywords__ = ['airbrake', 'exceptions', 'airbrake.io']
 __license__ = 'Apache License, Version 2.0'
 __url__ = 'https://github.com/airbrake/airbrake-python-integrations'
 __notifier__ = {
-    'name': 'airbrake-python',
+    'name': 'airbrake-python-integrations',
     'version': __version__,
     'url': __url__,
 }
