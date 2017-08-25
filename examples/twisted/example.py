@@ -2,7 +2,7 @@ import unittest
 
 from twisted.internet import protocol, reactor, endpoints
 from twisted.logger import globalLogBeginner, Logger
-from airbrake_python_integrations.twisted.observer import AirbrakeLogObserver
+from airbrake_integrations.twisted.observer import AirbrakeLogObserver
 
 
 class Echo(protocol.Protocol):

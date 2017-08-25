@@ -23,7 +23,7 @@ Key features
 
 This library is built on top of [Airbrake Python][airbrake-python]. The difference
 between _Airbrake Python_ and _Airbrake Python Integrations_ is that the
-`airbrake-python-integrations` package is just a collection of integrations
+`airbrake-integrations` package is just a collection of integrations
 with frameworks or other libraries. The `airbrake` package is the core library
 that performs exception sending and other heavy lifting.
 
@@ -41,9 +41,9 @@ The list of integrations that are available in this package includes:
 Installation
 ------------
 
-To install airbrake-python-integrations, run:
+To install airbrake-integrations, run:
 ```bash
-pip install airbrake-python-integrations
+pip install airbrake-integrations
 ```
 
 It's highly suggested that you add the package to your `requirements.txt` file:
@@ -77,7 +77,7 @@ catch all exceptions before it.
 
 ```python
 MIDDLEWARE = [
-    'airbrake_python_integrations.django.middleware.AirbrakeNotifierMiddleware',
+    'airbrake_integrations.django.middleware.AirbrakeNotifierMiddleware',
     ...
 ]
 ```
@@ -106,7 +106,7 @@ AIRBRAKE_ENVIRONMENT = "production"
 
 And then install the extension!
 ```python
-from airbrake_python_integrations.flask.app import AirbrakeApp
+from airbrake_integrations.flask.app import AirbrakeApp
 
 app = Flask(__name__)
 app.config.from_pyfile('config.cfg')
@@ -118,7 +118,7 @@ An example flask app can be found in /examples/flask
 ### Twisted
 
 ```python
-from airbrake_python_integrations.twisted.observer import AirbrakeLogObserver
+from airbrake_integrations.twisted.observer import AirbrakeLogObserver
 from twisted.logger import globalLogBeginner, Logger
 
 settings = {

@@ -11,7 +11,7 @@ from setuptools import setup
 src_dir = os.path.dirname(os.path.realpath(__file__))
 about = {}
 with open(
-    os.path.join(src_dir, 'airbrake_python_integrations', '__about__.py')
+    os.path.join(src_dir, 'airbrake_integrations', '__about__.py')
   ) as abt:
   exec(abt.read(), about)  # pylint: disable=exec-used
 

@@ -5,7 +5,7 @@ import unittest
 from flask import Flask, got_request_exception
 from requests.exceptions import RequestException
 
-from airbrake_python_integrations.flask.app import AirbrakeApp
+from airbrake_integrations.flask.app import AirbrakeApp
 from airbrake.notifier import Airbrake
 
 

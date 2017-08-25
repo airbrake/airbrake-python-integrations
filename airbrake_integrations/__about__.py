@@ -12,7 +12,7 @@ __all__ = (
     '__notifier__',
 )
 
-__title__ = 'airbrake-python-integrations'
+__title__ = 'airbrake-integrations'
 __summary__ = 'Python Integrations for airbrake.io'
 __author__ = 'Zach Goldstein'
 __email__ = 'zach@airbrake.io'

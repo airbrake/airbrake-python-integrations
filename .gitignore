@@ -2,6 +2,6 @@
 nosetests.xml
 .tox
 *.pyc
-airbrake_python_integrations.egg-info
+airbrake_integrations.egg-info
 coverage
 venv

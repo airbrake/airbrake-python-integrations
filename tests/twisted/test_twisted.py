@@ -6,7 +6,7 @@ from twisted.internet import protocol, reactor, endpoints, defer
 from twisted.logger import globalLogBeginner, Logger
 from twisted.test import proto_helpers
 
-from airbrake_python_integrations.twisted.observer import AirbrakeLogObserver
+from airbrake_integrations.twisted.observer import AirbrakeLogObserver
 
 
 def deep_failure(msg):

@@ -40,7 +40,7 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    'airbrake_python_integrations.django.middleware.AirbrakeNotifierMiddleware',
+    'airbrake_integrations.django.middleware.AirbrakeNotifierMiddleware',
     'app.middleware.SimpleMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
