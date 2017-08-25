@@ -115,6 +115,12 @@ ab = AirbrakeApp(app)
 
 An example flask app can be found in /examples/flask
 
+To run the example:
+```bash
+export FLASK_APP=example.py
+flask run
+```
+
 ### Twisted
 
 ```python
