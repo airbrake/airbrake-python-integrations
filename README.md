@@ -19,7 +19,7 @@ can quickly determine the root cause.
 
 ### Key features
 
-This library is built on top of [Airbrake Python][airbrake-python](https://github.com/airbrake/airbrake-python). The difference
+This library is built on top of [Airbrake Python](https://github.com/airbrake/airbrake-python). The difference
 between _Airbrake Python_ and _Airbrake Python Integrations_ is that the
 `airbrake-integrations` package is just a collection of integrations
 with frameworks or other libraries. The `airbrake` package is the core library
@@ -32,9 +32,9 @@ the `airbrake` package and ignore this package entirely.
 
 The list of integrations that are available in this package includes:
 
-* Django<sup>[[link](#django)]</sup>
-* Flask<sup>[[link](#flask)]</sup>
-* Twisted<sup>[[link](#twisted)]</sup>
+* Django
+* Flask
+* Twisted
 
 ### Installation
 
