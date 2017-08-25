@@ -1,15 +1,14 @@
 Airbrake python notifier integrations
-========
+=====================================
 
-![Airbrake integration libraries for Python][arthur-python]
+<img src="http://f.cl.ly/items/3Z1A202C1U2j3E1O1N0n/python%2009.19.32.jpg" width=800px>
 
 * [Airbrake Python Integrations README](https://github.com/airbrake/airbrake-python-integrations)
 * [Airbrake Python README](https://github.com/airbrake/airbrake-python)
 
 Integrations built on top of the airbrake python notifier for quick use with popular frameworks and libraries.
 
-Introduction
-------------
+### Introduction
 
 [Airbrake](https://airbrake.io/) is an online tool that provides robust exception
 tracking in any of your Python applications. In doing so, it allows you to easily
@@ -18,10 +17,9 @@ back to recent changes. The Airbrake dashboard provides easy categorization,
 searching, and prioritization of exceptions so that when errors occur, your team
 can quickly determine the root cause.
 
-Key features
-------------
+### Key features
 
-This library is built on top of [Airbrake Python][airbrake-python]. The difference
+This library is built on top of [Airbrake Python][airbrake-python](https://github.com/airbrake/airbrake-python). The difference
 between _Airbrake Python_ and _Airbrake Python Integrations_ is that the
 `airbrake-integrations` package is just a collection of integrations
 with frameworks or other libraries. The `airbrake` package is the core library
@@ -38,8 +36,7 @@ The list of integrations that are available in this package includes:
 * Flask<sup>[[link](#flask)]</sup>
 * Twisted<sup>[[link](#twisted)]</sup>
 
-Installation
-------------
+### Installation
 
 To install airbrake-integrations, run:
 ```bash
@@ -52,10 +49,9 @@ It's highly suggested that you add the package to your `requirements.txt` file:
 pip freeze > requirements.txt
 ```
 
-Configuration
--------------
+### Configuration
 
-### Django
+#### Django
 
 To install the middleware and catch exceptions in your views:
 
@@ -93,7 +89,7 @@ def process_exception(self, request, exception):
 
 An example django app can be found in /examples/django
 
-### Flask
+#### Flask
 
 To catch exceptions, use the Airbrake extension:
 
@@ -121,7 +117,7 @@ export FLASK_APP=example.py
 flask run
 ```
 
-### Twisted
+#### Twisted
 
 ```python
 from airbrake_integrations.twisted.observer import AirbrakeLogObserver
@@ -148,6 +144,3 @@ except:
 This creates an observer that looks the `globalLogPublisher` twisted object, and checks all events for any possible exceptions.
 
 An example flask app can be found in /examples/twisted
-
-[airbrake-python]: https://github.com/airbrake/airbrake-python
-[arthur-python]: http://f.cl.ly/items/3Z1A202C1U2j3E1O1N0n/python%2009.19.32.jpg
