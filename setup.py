@@ -57,7 +57,6 @@ CLASSIFIERS = [
 
 INSTALL_REQUIRES = [
   'requests>=2.8.1',
-  'Django>=1.10.6'
 ]
 
 
