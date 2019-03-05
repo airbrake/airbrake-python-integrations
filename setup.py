@@ -56,7 +56,7 @@ CLASSIFIERS = [
 
 
 INSTALL_REQUIRES = [
-  'requests>=2.8.1',
+  'requests>=2.20.0',
 ]
 
 
