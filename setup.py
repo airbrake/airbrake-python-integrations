@@ -17,7 +17,6 @@ with open(
 
 
 # README.rst is for PyPI page
-# pandoc --from=markdown_github --to=rst README.md --output=README.rst
 LONG_DESCRIPTION = ''
 readme_rst = os.path.join(src_dir, 'README.md')
 if os.path.isfile(readme_rst):
@@ -81,6 +80,7 @@ package_attributes = {
   'keywords': ' '.join(about['__keywords__']),
   'license': about['__license__'],
   'long_description': LONG_DESCRIPTION,
+  'long_description_content_type': "text/markdown",
   'name': about['__title__'],
   'packages': find_packages(exclude=['tests']),
   'test_suite': 'tests',
