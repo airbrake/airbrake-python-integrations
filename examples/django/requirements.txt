@@ -1,7 +1,7 @@
 airbrake-integrations==0.1.4
 certifi==2018.11.29
 chardet==3.0.4
-Django==1.11.24
+Django>=1.11.27
 idna==2.8
 pytz==2018.9
 requests==2.22.0
