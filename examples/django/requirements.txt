@@ -1,4 +1,4 @@
-airbrake-integrations==0.1.4
+airbrake-integrations==0.1.5
 certifi==2018.11.29
 chardet==3.0.4
 Django>=1.11.27
