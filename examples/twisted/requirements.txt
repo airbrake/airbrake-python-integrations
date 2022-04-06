@@ -10,6 +10,6 @@ incremental==17.5.0
 PyHamcrest==1.9.0
 requests==2.20.0
 six==1.10.0
-Twisted==19.7.0
+Twisted==22.2.0
 urllib3==1.24.3
 zope.interface==4.4.2
